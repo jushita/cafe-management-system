@@ -87,24 +87,34 @@ var14.set = ("0")
 var15.set = ("0")
 var16.set = ("0")
 #Widget created
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var1, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var2, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var3, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var4, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var5, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var6, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var7, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, column = 0)
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var8, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, column = 0)
-
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var9, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var10, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var11, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var12, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var13, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var14, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var15, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, column = 0)
-Latte = Checkbutton(f1ab, text="Latte\t", variable = var16, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, column = 0)
+# f1aa == left hand box
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var1, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
+Espresso = Checkbutton(f1aa, text="Espresso \t\t", variable = var2, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
+Iced_Latte = Checkbutton(f1aa, text="Iced Latte \t\t", variable = var3, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, sticky = W)
+Vale_Coffee = Checkbutton(f1aa, text="Vale_Coffee \t\t", variable = var4, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, sticky = W)
+Cappuccino  = Checkbutton(f1aa, text="Cappuccino \t\t", variable = var5, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, sticky = W)
+African_Coffee = Checkbutton(f1aa, text="African Coffee \t\t", variable = var6, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, sticky = W)
+American_Coffee = Checkbutton(f1aa, text="American Coffee \t\t", variable = var7, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, sticky = W)
+Iced_Cappuccino = Checkbutton(f1aa, text="Iced Cappuccino \t\t", variable = var8, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, sticky = W)
 
 
+#f1ab == right hand box
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CAKES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+CoffeeCake= Checkbutton(f1ab, text="Coffee Cake\t", variable = var9, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
+Red_Velvet_Cake = Checkbutton(f1ab, text="Red Velvet Cake\t", variable = var10, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
+Black_Forest_Cake = Checkbutton(f1ab, text="Black Forest Cake\t", variable = var11, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, sticky = W)
+Boston_Cream_Cake = Checkbutton(f1ab, text="Boston Cream Cake\t", variable = var12, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, sticky = W)
+Lagos_Chocolate_Cake = Checkbutton(f1ab, text="Lagos Chocolate Cake\t", variable = var13, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, sticky = W)
+Kilburn_Chocolate_Cake = Checkbutton(f1ab, text="Kilburn Chocolatee Cake\t", variable = var14, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, sticky = W)
+Carlton_Hill_Cake = Checkbutton(f1ab, text="Carlton Hill Cake\t", variable = var15, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, sticky = W)
+Queen_park_Cake = Checkbutton(f1ab, text="Queen's Park Chocolate Cake\t", variable = var16, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, sticky = W)
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Enter widget for DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+txtLatte = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', state = DISABLED )
+txtLatte.grid(row = 0, column = 1)
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Enter widget for CAKES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+txtCoffeeCake = Entry(f1ab, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', state = DISABLED )
+txtCoffeeCake.grid(row = 0, column = 1)
 
 root.mainloop()
