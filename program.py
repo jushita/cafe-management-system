@@ -32,8 +32,8 @@ ft2.pack(side = TOP)
 fb2 = Frame(f2, width = 440, height = 330, bd = 16, relief = "raise")
 fb2.pack(side = BOTTOM)
 
-box1 = Frame(f1a, width = 400, height = 330, bd = 16, relief = "raise")
-box1.pack(side = LEFT)
+f1aa = Frame(f1a, width = 400, height = 330, bd = 16, relief = "raise")
+f1aa.pack(side = LEFT)
 f1ab = Frame(f1a, width = 400, height = 330, bd = 16, relief = "raise")
 f1ab.pack(side = RIGHT)
 
@@ -50,6 +50,7 @@ f2.configure (background = 'black')
 
 lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = "Cafe Management Systems", bd = 10)
 lblInfo.grid(row = 0, column = 0)
+
 #Frame Creation ends
 
 var1 = IntVar()
@@ -86,13 +87,24 @@ var14.set = ("0")
 var15.set = ("0")
 var16.set = ("0")
 #Widget created
-Latte = Checkbutton(box1, text="Latte\t", variable = var1, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var2, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var3, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var4, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var5, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var6, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var7, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, column = 0)
-Latte = Checkbutton(box1, text="Latte\t", variable = var8, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var1, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var2, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var3, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var4, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var5, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var6, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var7, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, column = 0)
+Latte = Checkbutton(f1aa, text="Latte\t", variable = var8, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, column = 0)
+
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var9, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 0, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var10, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 1, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var11, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 2, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var12, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 3, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var13, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 4, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var14, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 5, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var15, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 6, column = 0)
+Latte = Checkbutton(f1ab, text="Latte\t", variable = var16, onvalue = 1, offvalue = 0, font  = ('arial', 18, 'bold')).grid(row = 7, column = 0)
+
+
 
 root.mainloop()
