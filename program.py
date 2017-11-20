@@ -53,6 +53,16 @@ lblInfo.grid(row = 0, column = 0)
 
 #Frame Creation ends
 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATING METHOD FOR EXIT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+def qExit():
+    qExit = messagebox.askyesno("Quit System", "Do you want to quit?")
+    if qExit > 0:
+        root.destroy()
+        return
+
+
+
 var1 = IntVar()
 var2 = IntVar()
 var3 = IntVar()
@@ -116,6 +126,7 @@ E_Carlton_Hill_Chocolate_Cake.set("0")
 E_Queen_Park_Chocolate_Cake.set("0")
 
 DateofOrder.set(time.strftime("%d/%m/%Y"))
+
 var1.set("0")
 var2.set("0")
 var3.set("0")
@@ -235,6 +246,6 @@ txtTotal.grid(row = 2, column = 1, sticky = W)
 btnTotal = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Total ").grid(row = 0, column = 0)
 btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt ").grid(row = 0, column = 1)
 btnReset = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Reset ").grid(row = 0, column = 2)
-btnExit = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Exit ").grid(row = 0, column = 3)
+btnExit = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Exit ", command = qExit).grid(row = 0, column = 3)
 
 root.mainloop()
