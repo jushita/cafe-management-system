@@ -2,6 +2,7 @@ from tkinter import *
 import random
 import time
 import datetime
+from tkinter import messagebox
 
 #Basic window is created
 root = Tk()
@@ -57,9 +58,154 @@ lblInfo.grid(row = 0, column = 0)
 
 def qExit():
     qExit = messagebox.askyesno("Quit System", "Do you want to quit?")
-    if qExit > 0:
-        root.destroy()
+    if qExit:
+        root.quit()
         return
+
+def reset():
+    PaidTax.set("")
+    SubTotal.set("")
+    TotalCost.set("")
+    CostofDrinks.set("")
+    CostofCakes.set("")
+    ServiceCharge.set("")
+    txtReceipt.delete("1.0", END)
+
+    E_Latte.set("0")
+    E_Espresso.set("0")
+    E_Iced_Latte.set("0")
+    E_Vale_Coffee.set("0")
+    E_Cappuccino.set("0")
+    E_African_Coffee.set("0")
+    E_American_Coffee.set("0")
+    E_Iced_Cappuccino.set("0")
+    E_Coffee_Cakes.set("0")
+    E_Red_Velvet_Cake.set("0")
+    E_Black_Forest_Cake.set("0")
+    E_Boston_Cream_Cake.set("0")
+    E_Lagos_Chocolate_Cake.set("0")
+    E_Kilburn_Chocolate_Cake.set("0")
+    E_Carlton_Hill_Chocolate_Cake.set("0")
+    E_Queen_Park_Chocolate_Cake.set("0")
+
+    var1.set("0")
+    var2.set("0")
+    var3.set("0")
+    var4.set("0")
+    var5.set("0")
+    var6.set("0")
+    var7.set("0")
+    var8.set("0")
+    var9.set("0")
+    var10.set("0")
+    var11.set("0")
+    var12.set("0")
+    var13.set("0")
+    var14.set("0")
+    var15.set("0")
+    var16.set("0")
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKBUTTONS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def chkbutton_value():
+    if(var1.get() == 1):
+        txtLatte.configure(state = NORMAL)
+    elif var1.get() == 0:
+        txtLatte.configure(state = DISABLED)
+        E_Latte.set("0")
+    if(var2.get() == 1):
+        txtEspresso.configure(state = NORMAL)
+    elif var2.get() == 0:
+        txtEspresso.configure(state = DISABLED)
+        E_Espresso.set("0")
+    if(var3.get() == 1):
+        txtIced_Latte.configure(state = NORMAL)
+    elif var3.get() == 0:
+        txtIced_Latte.configure(state = DISABLED)
+        E_Iced_Latte.set("0")
+    if(var4.get() == 1):
+        txtVale_Coffee.configure(state = NORMAL)
+    elif var4.get() == 0:
+        txtVale_Coffee.configure(state = DISABLED)
+        E_Vale_Coffee.set("0")
+    if(var5.get() == 1):
+        txtCappuccino.configure(state = NORMAL)
+    elif var5.get() == 0:
+        txtCappuccino.configure(state = DISABLED)
+        E_Cappuccino.set("0")
+    if(var6.get() == 1):
+        txtAfrican_Coffee.configure(state = NORMAL)
+    elif var6.get() == 0:
+        txtAfrican_Coffee.configure(state = DISABLED)
+        E_African_Coffee.set("0")
+    if(var7.get() == 1):
+        txtAmerican_Coffee.configure(state = NORMAL)
+    elif var7.get() == 0:
+        txtAmerican_Coffee.configure(state = DISABLED)
+        E_American_Coffee.set("0")
+    if(var8.get() == 1):
+        txtIced_Cappuccino.configure(state = NORMAL)
+    elif var8.get() == 0:
+        txtIced_Cappuccino.configure(state = DISABLED)
+        E_Iced_Cappuccino.set("0")
+    if(var9.get() == 1):
+        txtCoffeeCake.configure(state = NORMAL)
+    elif var9.get() == 0:
+        txtCoffeeCake.configure(state = DISABLED)
+        E_Coffee_Cakes.set("0")
+    if(var10.get() == 1):
+        txtRed_Velvet_Cake.configure(state = NORMAL)
+    elif var10.get() == 0:
+        txtRed_Velvet_Cake.configure(state = DISABLED)
+        E_Red_Velvet_Cake.set("0")
+    if(var11.get() == 1):
+        txtBlack_Forest_Cake.configure(state = NORMAL)
+    elif var11.get() == 0:
+        txtBlack_Forest_Cake.configure(state = DISABLED)
+        E_Black_Forest_Cake.set("0")
+    if(var12.get() == 1):
+        txtBoston_Cream_Cake.configure(state = NORMAL)
+    elif var12.get() == 0:
+        txtBoston_Cream_Cake.configure(state = DISABLED)
+        E_Boston_Cream_Cake.set("0")
+    if(var13.get() == 1):
+        txtLagos_Chocolate_Cake.configure(state = NORMAL)
+    elif var13.get() == 0:
+        txtLagos_Chocolate_Cake.configure(state = DISABLED)
+        E_Lagos_Chocolate_Cake.set("0")
+    if(var14.get() == 1):
+        txtKilburn_Chocolate_Cake.configure(state = NORMAL)
+    elif var14.get() == 0:
+        txtKilburn_Chocolate_Cake.configure(state = DISABLED)
+        E_Kilburn_Chocolate_Cake.set("0")
+    if(var15.get() == 1):
+        txtCarlton_Hill_Cake.configure(state = NORMAL)
+    elif var15.get() == 0:
+        txtCarlton_Hill_Cake.configure(state = DISABLED)
+        E_Carlton_Hill_Chocolate_Cake.set("0")
+    if(var16.get() == 1):
+        txtQueen_park_Cake.configure(state = NORMAL)
+    elif var16.get() == 0:
+        txtQueen_park_Cake.configure(state = DISABLED)
+        E_Queen_Park_Chocolate_Cake.set("0")
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKBUTTONS END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    txtLatte.configure(state=DISABLED)
+    txtEspresso.configure(state=DISABLED)
+    txtIced_Latte.configure(state=DISABLED)
+    txtVale_Coffee.configure(state=DISABLED)
+    txtCappuccino.configure(state=DISABLED)
+    txtAfrican_Coffee.configure(state=DISABLED)
+    txtAmerican_Coffee.configure(state=DISABLED)
+    txtIced_Cappuccino.configure(state=DISABLED)
+    txtCoffeeCake.configure(state=DISABLED)
+    txtRed_Velvet_Cake.configure(state=DISABLED)
+    txtBlack_Forest_Cake.configure(state=DISABLED)
+    txtBoston_Cream_Cake.configure(state=DISABLED)
+    txtLagos_Chocolate_Cake.configure(state=DISABLED)
+    txtKilburn_Chocolate_Cake.configure(state=DISABLED)
+    txtCarlton_Hill_Cake.configure(state=DISABLED)
+    txtQueen_park_Cake.configure(state=DISABLED)
+
 
 
 
@@ -116,6 +262,8 @@ E_Cappuccino.set("0")
 E_African_Coffee.set("0")
 E_American_Coffee.set("0")
 E_Iced_Cappuccino.set("0")
+
+
 E_Coffee_Cakes.set("0")
 E_Red_Velvet_Cake.set("0")
 E_Black_Forest_Cake.set("0")
@@ -127,22 +275,7 @@ E_Queen_Park_Chocolate_Cake.set("0")
 
 DateofOrder.set(time.strftime("%d/%m/%Y"))
 
-var1.set("0")
-var2.set("0")
-var3.set("0")
-var4.set("0")
-var5.set("0")
-var6.set("0")
-var7.set("0")
-var8.set("0")
-var9.set("0")
-var10.set("0")
-var11.set("0")
-var12.set("0")
-var13.set("0")
-var14.set("0")
-var15.set("0")
-var16.set("0")
+
 #Widget created
 # f1aa == left hand box
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -213,12 +346,12 @@ txtReceipt.grid(row = 1, column = 0)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Item INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 lblCostofDrinks = Label(f2aa, font=('arial', 16, 'bold'), text = "Cost of Drinks", bd = 8)
 lblCostofDrinks.grid(row = 0, column = 0, sticky = W)
-txtCostofDrinks = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtCostofDrinks = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = CostofDrinks)
 txtCostofDrinks.grid(row = 0, column = 1, sticky = W)
 
 lblCostofCakes = Label(f2aa, font=('arial', 16, 'bold'), text = "Cost of Cakes", bd = 8)
 lblCostofCakes.grid(row = 1, column = 0, sticky = W)
-txtCostofCakes = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtCostofCakes = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = CostofCakes)
 txtCostofCakes.grid(row = 1, column = 1, sticky = W)
 
 lblServiceCharge = Label(f2aa, font=('arial', 16, 'bold'), text = "Sevice charge", bd = 8)
@@ -228,24 +361,24 @@ txtServiceCharge.grid(row = 2, column = 1, sticky = W)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Payment INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 lblPaidTax = Label(f2ab, font=('arial', 16, 'bold'), text = "Tax", bd = 8)
 lblPaidTax.grid(row = 0, column = 0, sticky = W)
-txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = PaidTax)
 txtPaidTax.grid(row = 0, column = 1, sticky = W)
 
 lblSubTotal = Label(f2ab, font=('arial', 16, 'bold'), text = "Sub Total", bd = 8)
 lblSubTotal.grid(row = 1, column = 0, sticky = W)
-txtSubTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtSubTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = SubTotal)
 txtSubTotal.grid(row = 1, column = 1, sticky = W)
 
 lblTotal = Label(f2ab, font=('arial', 16, 'bold'), text = "Total", bd = 8)
 lblTotal.grid(row = 2, column = 0, sticky = W)
-txtTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = TotalCost)
 txtTotal.grid(row = 2, column = 1, sticky = W)
 
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BUTTONS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-btnTotal = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Total ").grid(row = 0, column = 0)
-btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt ").grid(row = 0, column = 1)
-btnReset = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Reset ").grid(row = 0, column = 2)
-btnExit = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Exit ", command = qExit).grid(row = 0, column = 3)
+btnTotal = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Total").grid(row = 0, column = 0)
+btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt").grid(row = 0, column = 1)
+btnReset = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Reset", command = reset).grid(row = 0, column = 2)
+btnExit = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Exit", command=qExit).grid(row = 0, column = 3)
 
 root.mainloop()
