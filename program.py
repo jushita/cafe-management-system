@@ -12,20 +12,20 @@ root.configure(background = "black")
 #basic window creation ends
 
 #Frames are created
-Tops = Frame(root, width = 1350, height = 100, bd = 14, relief = "raise")
+Tops = Frame(root, width = 1350, height = 100, bd = 8, relief = "raise")
 Tops.pack(side = TOP)
 
 f1 = Frame(root, width = 900, height = 650, bd = 8, relief = "raise")
 f1.pack(side = LEFT)
 
-f2 = Frame(root, width = 440, height = 650, bd = 8, relief = "raise")
+f2 = Frame(root, width = 450, height = 650, bd = 8, relief = "raise")
 f2.pack(side = RIGHT)
 
 
-f1a = Frame(f1, width = 90, height = 330, bd = 8, relief = "raise")
+f1a = Frame(f1, width = 0, height = 330, bd = 8, relief = "raise")
 f1a.pack(side = TOP)
 
-f2a = Frame(f1, width = 90, height = 320, bd = 6, relief = "raise")
+f2a = Frame(f1, width = 450, height = 320, bd = 6, relief = "raise")
 f2a.pack(side = BOTTOM)
 
 ft2 = Frame(f2, width = 440, height = 450, bd = 12, relief = "raise")
@@ -33,9 +33,9 @@ ft2.pack(side = TOP)
 fb2 = Frame(f2, width = 440, height = 200, bd = 16, relief = "raise")
 fb2.pack(side = BOTTOM)
 
-f1aa = Frame(f1a, width = 400, height = 330, bd = 16, relief = "raise")
+f1aa = Frame(f1a, width = 450, height = 330, bd = 16, relief = "raise")
 f1aa.pack(side = LEFT)
-f1ab = Frame(f1a, width = 400, height = 330, bd = 16, relief = "raise")
+f1ab = Frame(f1a, width = 450, height = 330, bd = 16, relief = "raise")
 f1ab.pack(side = RIGHT)
 
 f2aa = Frame(f2a, width = 450, height = 330, bd = 14, relief = "raise")
@@ -57,9 +57,6 @@ lblInfo.grid(row = 0, column = 0)
 #Frame Creation ends
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>COST OF ITEMS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-def check():
-    print("OK")
-check()
 def CostofItems():
     Item1 = float(E_Latte.get())
     Item2 = float(E_Espresso.get())
@@ -87,15 +84,14 @@ def CostofItems():
     CostofCakes.set(CakesPrice)
     CostofDrinks.set(DrinksPrice)
     SC = "$" + str('%.2f'%(1.59))
-    ServiceCharge.seet(SC)
+    ServiceCharge.set(SC)
 
-    SubTotalofITEMS = "$" + str("%.2"%(PriceofDrinks + PriceofCakes + 1.59))
+    SubTotalofITEMS = "$" + str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59))
     SubTotal.set(SubTotalofITEMS)
-
-    Tax = "$" + str("%.2f"%((PriceofDrinks + PriceofCakes + 1.59)*0.15))
+    Tax = "$" + str('%.2f'%((PriceofDrinks + PriceofCakes + 1.59)*0.15))
     PaidTax.set(Tax)
     TT = ((PriceofDrinks + PriceofCakes + 1.59)*0.15)
-    TC = "$" + str("%.2f"%(PriceofDrinks + PriceofCakes + 1.59 + TT))
+    TC = "$" + str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59 + TT))
     TotalCost.set(TC)
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>COST OF ITEMS END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -251,6 +247,55 @@ def chkbutton_value():
     elif var16.get() == 0:
         txtQueen_park_Cake.configure(state = DISABLED)
         E_Queen_Park_Chocolate_Cake.set("0")
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT start<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def Receipt():
+    txtReceipt.delete("1.0", END)
+    x = random.randint(10908, 500876)
+    randomRef = str(x)
+    Receipt_Ref.set("BILL" + randomRef)
+
+    txtReceipt.insert(END, 'Receipt Ref: \t\t\t'+Receipt_Ref.get()+"\t\t\t"+DateofOrder.get()+"\n")
+    txtReceipt.insert(END, 'Items\t\t\t'+'Quantity\t\t\t'+"Price \n\n")
+
+    if E_Latte.get() > 0:
+        txtReceipt.insert(END, 'Latte:\t\t\t'+str(E_Latte.get())+'\t\t\t'+str('$%.2f'%(E_Latte.get()*1.2))+'\n')
+    if E_Espresso.get() > 0:
+        txtReceipt.insert(END, 'Espresso:\t\t\t'+str(E_Espresso.get())+'\t\t\t'+str('$%.2f'%(E_Espresso.get()*1.99))+'\n')
+    if E_Iced_Latte.get() > 0:
+        txtReceipt.insert(END, 'Iced Latte:\t\t\t'+str(E_Iced_Latte.get())+'\t\t\t'+str('$%.2f'%(E_Iced_Latte.get()*2.05))+'\n')
+    if E_Vale_Coffee.get() > 0:
+        txtReceipt.insert(END, 'Vale Coffee:\t\t\t'+str(E_Vale_Coffee.get())+'\t\t\t'+str('$%.2f'%(E_Vale_Coffee.get()*1.89))+'\n')
+    if E_Cappuccino.get() > 0:
+        txtReceipt.insert(END, 'Cappuccino:\t\t\t'+str(E_Cappuccino.get())+'\t\t\t'+str('$%.2f'%(E_Cappuccino.get()*1.99))+'\n')
+    if E_African_Coffee.get() > 0:
+        txtReceipt.insert(END, 'African Coffee:\t\t\t'+str(E_African_Coffee.get())+'\t\t\t'+str('$%.2f'%(E_African_Coffee.get()*2.99))+'\n')
+    if E_American_Coffee.get() > 0:
+        txtReceipt.insert(END, 'American Coffee:\t\t\t'+str(E_American_Coffee.get())+'\t\t\t'+str('$%.2f'%(E_American_Coffee.get()*2.39))+'\n')
+    if E_Iced_Cappuccino.get() > 0:
+        txtReceipt.insert(END, 'Iced Cappuccino:\t\t\t'+str(E_Iced_Cappuccino.get())+'\t\t\t'+str('$%.2f'%(E_Iced_Cappuccino.get()*1.29))+'\n')
+    if E_Coffee_Cakes.get() > 0:
+        txtReceipt.insert(END, 'Coffee Cake:\t\t\t'+str(E_Coffee_Cakes.get())+'\t\t\t'+str('$%.2f'%(E_Coffee_Cakes.get()*1.35))+'\n')
+    if E_Red_Velvet_Cake.get() > 0:
+        txtReceipt.insert(END, 'Red Velvet Cake:\t\t\t'+str(E_Red_Velvet_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Red_Velvet_Cake.get()*2.2))+'\n')
+    if E_Black_Forest_Cake.get() > 0:
+        txtReceipt.insert(END, 'Black Forest Cake:\t\t\t'+str(E_Black_Forest_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Black_Forest_Cake.get()*1.99))+'\n')
+    if E_Boston_Cream_Cake.get() > 0:
+        txtReceipt.insert(END, 'Boston Cream Cake:\t\t\t'+str(E_Boston_Cream_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Boston_Cream_Cake.get()*1.49))+'\n')
+    if E_Lagos_Chocolate_Cake.get() > 0:
+        txtReceipt.insert(END, 'Lagos Chocolate Cake:\t\t\t'+str(E_Lagos_Chocolate_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Lagos_Chocolate_Cake.get()*1.80))+'\n')
+    if E_Kilburn_Chocolate_Cake.get() > 0:
+        txtReceipt.insert(END, 'Kilburn Chocolate Cake:\t\t\t'+str(E_Kilburn_Chocolate_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Kilburn_Chocolate_Cake.get()*1.67))+'\n')
+    if E_Carlton_Hill_Chocolate_Cake.get() > 0:
+        txtReceipt.insert(END, 'Carlton Hill Chocolate Cake:\t\t\t'+str(E_Carlton_Hill_Chocolate_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Carlton_Hill_Chocolate_Cake.get()*1.6))+'\n')
+    if E_Queen_Park_Chocolate_Cake.get() > 0:
+        txtReceipt.insert(END, 'Queen Park Chocolate Cake:\t\t\t'+str(E_Queen_Park_Chocolate_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Queen_Park_Chocolate_Cake.get()*1.99))+'\n')
+
+    txtReceipt.insert(END, '\nCost of Drinks:\t\t'+CostofDrinks.get()+"\tTax Paid:\t\t"+ PaidTax.get()+"\n")
+    txtReceipt.insert(END, 'Cost of Cakes:\t\t'+CostofCakes.get()+"\tSubTotal:\t\t"+ SubTotal.get()+"\n")
+    txtReceipt.insert(END, 'Service Charge:\t\t'+ServiceCharge.get()+"\tTotal Cost:\t\t"+ TotalCost.get()+"\n")
+
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKBUTTONS END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -280,43 +325,43 @@ CostofCakes = StringVar()
 CostofDrinks = StringVar()
 ServiceCharge = StringVar()
 
-E_Latte = StringVar()
-E_Espresso = StringVar()
-E_Iced_Latte = StringVar()
-E_Vale_Coffee = StringVar()
-E_Cappuccino = StringVar()
-E_African_Coffee = StringVar()
-E_American_Coffee = StringVar()
-E_Iced_Cappuccino = StringVar()
+E_Latte = IntVar()
+E_Espresso = IntVar()
+E_Iced_Latte = IntVar()
+E_Vale_Coffee = IntVar()
+E_Cappuccino = IntVar()
+E_African_Coffee = IntVar()
+E_American_Coffee = IntVar()
+E_Iced_Cappuccino = IntVar()
 
-E_Coffee_Cakes = StringVar()
-E_Red_Velvet_Cake = StringVar()
-E_Black_Forest_Cake = StringVar()
-E_Boston_Cream_Cake = StringVar()
-E_Lagos_Chocolate_Cake = StringVar()
-E_Kilburn_Chocolate_Cake = StringVar()
-E_Carlton_Hill_Chocolate_Cake = StringVar()
-E_Queen_Park_Chocolate_Cake = StringVar()
-
-
-E_Latte.set("0")
-E_Espresso.set("0")
-E_Iced_Latte.set("0")
-E_Vale_Coffee.set("0")
-E_Cappuccino.set("0")
-E_African_Coffee.set("0")
-E_American_Coffee.set("0")
-E_Iced_Cappuccino.set("0")
+E_Coffee_Cakes = IntVar()
+E_Red_Velvet_Cake = IntVar()
+E_Black_Forest_Cake = IntVar()
+E_Boston_Cream_Cake = IntVar()
+E_Lagos_Chocolate_Cake = IntVar()
+E_Kilburn_Chocolate_Cake = IntVar()
+E_Carlton_Hill_Chocolate_Cake = IntVar()
+E_Queen_Park_Chocolate_Cake = IntVar()
 
 
-E_Coffee_Cakes.set("0")
-E_Red_Velvet_Cake.set("0")
-E_Black_Forest_Cake.set("0")
-E_Boston_Cream_Cake.set("0")
-E_Lagos_Chocolate_Cake.set("0")
-E_Kilburn_Chocolate_Cake.set("0")
-E_Carlton_Hill_Chocolate_Cake.set("0")
-E_Queen_Park_Chocolate_Cake.set("0")
+E_Latte.set(0)
+E_Espresso.set(0)
+E_Iced_Latte.set(0)
+E_Vale_Coffee.set(0)
+E_Cappuccino.set(0)
+E_African_Coffee.set(0)
+E_American_Coffee.set(0)
+E_Iced_Cappuccino.set(0)
+
+
+E_Coffee_Cakes.set(0)
+E_Red_Velvet_Cake.set(0)
+E_Black_Forest_Cake.set(0)
+E_Boston_Cream_Cake.set(0)
+E_Lagos_Chocolate_Cake.set(0)
+E_Kilburn_Chocolate_Cake.set(0)
+E_Carlton_Hill_Chocolate_Cake.set(0)
+E_Queen_Park_Chocolate_Cake.set(0)
 
 DateofOrder.set(time.strftime("%d/%m/%Y"))
 
@@ -360,7 +405,7 @@ txtAfrican_Coffee = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, j
 txtAfrican_Coffee.grid(row = 5, column = 1)
 txtAmerican_Coffee = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_American_Coffee, state = DISABLED )
 txtAmerican_Coffee.grid(row = 6, column = 1)
-txtIced_Cappuccino = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Cappuccino, state = DISABLED )
+txtIced_Cappuccino = Entry(f1aa, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Iced_Cappuccino, state = DISABLED )
 txtIced_Cappuccino.grid(row = 7, column = 1)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Enter widget for CAKES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 txtCoffeeCake = Entry(f1ab, font=('arial', 16, 'bold'), bd = 8, width = 6, justify = 'left', textvariable = E_Coffee_Cakes, state = DISABLED )
@@ -382,8 +427,9 @@ txtQueen_park_Cake.grid(row = 7, column = 1)
 
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-lblReceipt = Label(ft2, font=('arial', 12, 'bold'), text="Receipt",bd = 2).grid(row = 0, column = 0, sticky = W)
-txtReceipt = Text(ft2, font=('arial', 11, 'bold'), bd = 8, width = 59)
+lblReceipt = Label(ft2, font=('arial', 12, 'bold'), text="Receipt",bd = 2, anchor = "w")
+lblReceipt.grid(row = 0, column = 0, sticky = W)
+txtReceipt = Text(ft2, font=('arial', 11, 'bold'), width = 59, height =22, bg="white", bd=8)
 txtReceipt.grid(row = 1, column = 0)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Cost Item INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -399,28 +445,28 @@ txtCostofCakes.grid(row = 1, column = 1, sticky = W)
 
 lblServiceCharge = Label(f2aa, font=('arial', 16, 'bold'), text = "Sevice charge", bd = 8, anchor = "w")
 lblServiceCharge.grid(row = 2, column = 0, sticky = W)
-txtServiceCharge = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left")
+txtServiceCharge = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = ServiceCharge)
 txtServiceCharge.grid(row = 2, column = 1, sticky = W)
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Payment INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 lblPaidTax = Label(f2ab, font=('arial', 16, 'bold'), text = "Tax", bd = 8)
 lblPaidTax.grid(row = 0, column = 0, sticky = W)
-txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = PaidTax, insertwidth = 2)
+txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = PaidTax)
 txtPaidTax.grid(row = 0, column = 1, sticky = W)
 
 lblSubTotal = Label(f2ab, font=('arial', 16, 'bold'), text = "Sub Total", bd = 8)
 lblSubTotal.grid(row = 1, column = 0, sticky = W)
-txtSubTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = SubTotal, insertwidth = 2)
+txtSubTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = SubTotal)
 txtSubTotal.grid(row = 1, column = 1, sticky = W)
 
 lblTotalCost = Label(f2ab, font=('arial', 16, 'bold'), text = "Total", bd = 8)
 lblTotalCost.grid(row = 2, column = 0, sticky = W)
-txtTotalCost = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = TotalCost, insertwidth = 2)
+txtTotalCost = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = TotalCost)
 txtTotalCost.grid(row = 2, column = 1, sticky = W)
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BUTTONS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 btnTotal = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Total", command = CostofItems).grid(row = 0, column = 0)
-btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt").grid(row = 0, column = 1)
+btnReceipt = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Receipt", command = Receipt).grid(row = 0, column = 1)
 btnReset = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Reset", command = reset).grid(row = 0, column = 2)
 btnExit = Button(fb2, padx = 16, pady = 1, bd = 4, fg = "black", font = ('arial', 16, 'bold'), width = 5, text = "Exit", command=qExit).grid(row = 0, column = 3)
 
