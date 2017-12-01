@@ -15,7 +15,7 @@ root.configure(background = "black")
 Tops = Frame(root, width = 1350, height = 100, bd = 8, relief = "raise")
 Tops.pack(side = TOP)
 
-f1 = Frame(root, width = 900, height = 650, bd = 8, relief = "raise")
+f1 = Frame(root, width = 900, height = 650, bd = 0, relief = "raise")
 f1.pack(side = LEFT)
 
 f2 = Frame(root, width = 450, height = 650, bd = 8, relief = "raise")
@@ -50,7 +50,7 @@ f1.configure (background = 'black')
 f2.configure (background = 'black')
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = "Cafe Management Systems", bd = 10)
+lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = "  Cafe Management Systems  \t", bd = 100)
 lblInfo.grid(row = 0, column = 0)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING ENDS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -290,9 +290,9 @@ def Receipt():
     if E_Queen_Park_Chocolate_Cake.get() > 0:
         txtReceipt.insert(END, 'Queen Park Chocolate Cake:\t\t\t'+str(E_Queen_Park_Chocolate_Cake.get())+'\t\t\t'+str('$%.2f'%(E_Queen_Park_Chocolate_Cake.get()*1.99))+'\n')
 
-    txtReceipt.insert(END, '\nCost of Drinks:\t\t'+CostofDrinks.get()+"\tTax Paid:\t\t"+ PaidTax.get()+"\n")
-    txtReceipt.insert(END, 'Cost of Cakes:\t\t'+CostofCakes.get()+"\tSubTotal:\t\t"+ SubTotal.get()+"\n")
-    txtReceipt.insert(END, 'Service Charge:\t\t'+ServiceCharge.get()+"\tTotal Cost:\t\t"+ TotalCost.get()+"\n")
+    txtReceipt.insert(END, '\nCost of Drinks:\t'+CostofDrinks.get()+"\tTax Paid:\t"+ PaidTax.get()+"\n")
+    txtReceipt.insert(END, 'Cost of Cakes:\t'+CostofCakes.get()+"\tSubTotal:\t"+ SubTotal.get()+"\n")
+    txtReceipt.insert(END, 'Service Charge:\t'+ServiceCharge.get()+"\tTotal Cost:\t"+ TotalCost.get()+"\n")
 
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RECEIPT END<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -369,14 +369,14 @@ DateofOrder.set(time.strftime("%d/%m/%Y"))
 #Widget created
 # f1aa == left hand box
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DRINKS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Latte = Checkbutton(f1aa, text="Latte\t", variable = var1, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
-Espresso = Checkbutton(f1aa, text="Espresso \t\t", variable = var2, onvalue = 1, offvalue = 0,command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
-Iced_Latte = Checkbutton(f1aa, text="Iced Latte \t\t", variable = var3, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 2, sticky = W)
-Vale_Coffee = Checkbutton(f1aa, text="Vale_Coffee \t\t", variable = var4, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 3, sticky = W)
-Cappuccino  = Checkbutton(f1aa, text="Cappuccino \t\t", variable = var5, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 4, sticky = W)
-African_Coffee = Checkbutton(f1aa, text="African Coffee \t\t", variable = var6, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 5, sticky = W)
+Latte = Checkbutton(f1aa, text="Latte \t\t", variable = var1, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 0, sticky = W)
+Espresso = Checkbutton(f1aa, text="Espresso  \t\t", variable = var2, onvalue = 1, offvalue = 0,command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 1, sticky = W)
+Iced_Latte = Checkbutton(f1aa, text="Iced Latte  \t\t", variable = var3, onvalue = 1, offvalue = 0, command = chkbutton_value, font  = ('arial', 18, 'bold')).grid(row = 2, sticky = W)
+Vale_Coffee = Checkbutton(f1aa, text="Vale_Coffee  \t\t", variable = var4, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 3, sticky = W)
+Cappuccino  = Checkbutton(f1aa, text="Cappuccino  \t\t", variable = var5, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 4, sticky = W)
+African_Coffee = Checkbutton(f1aa, text="African Coffee  \t\t", variable = var6, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 5, sticky = W)
 American_Coffee = Checkbutton(f1aa, text="American Coffee \t\t", variable = var7, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 6, sticky = W)
-Iced_Cappuccino = Checkbutton(f1aa, text="Iced Cappuccino \t\t", variable = var8, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 7, sticky = W)
+Iced_Cappuccino = Checkbutton(f1aa, text="Iced Cappuccino  \t\t", variable = var8, onvalue = 1, offvalue = 0, command = chkbutton_value,font  = ('arial', 18, 'bold')).grid(row = 7, sticky = W)
 
 
 #f1ab == right hand box
@@ -433,7 +433,7 @@ txtReceipt = Text(ft2, font=('arial', 11, 'bold'), width = 59, height =22, bg="w
 txtReceipt.grid(row = 1, column = 0)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Cost Item INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-lblCostofDrinks = Label(f2aa, font=('arial', 16, 'bold'), text = "Cost of Drinks", bd = 8, anchor="w")
+lblCostofDrinks = Label(f2aa, font=('arial', 16, 'bold'), text = "Cost of Drinks         \t", bd = 8, anchor="w")
 lblCostofDrinks.grid(row = 0, column = 0, sticky = W)
 txtCostofDrinks = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = CostofDrinks)
 txtCostofDrinks.grid(row = 0, column = 1, sticky = W)
@@ -443,7 +443,7 @@ lblCostofCakes.grid(row = 1, column = 0, sticky = W)
 txtCostofCakes = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = CostofCakes)
 txtCostofCakes.grid(row = 1, column = 1, sticky = W)
 
-lblServiceCharge = Label(f2aa, font=('arial', 16, 'bold'), text = "Sevice charge", bd = 8, anchor = "w")
+lblServiceCharge = Label(f2aa, font=('arial', 16, 'bold'), text = "Sevice charge\t", bd = 8, anchor = "w")
 lblServiceCharge.grid(row = 2, column = 0, sticky = W)
 txtServiceCharge = Entry(f2aa,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = ServiceCharge)
 txtServiceCharge.grid(row = 2, column = 1, sticky = W)
@@ -454,7 +454,7 @@ lblPaidTax.grid(row = 0, column = 0, sticky = W)
 txtPaidTax = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = PaidTax)
 txtPaidTax.grid(row = 0, column = 1, sticky = W)
 
-lblSubTotal = Label(f2ab, font=('arial', 16, 'bold'), text = "Sub Total", bd = 8)
+lblSubTotal = Label(f2ab, font=('arial', 16, 'bold'), text = "Sub Total         \t", bd = 8)
 lblSubTotal.grid(row = 1, column = 0, sticky = W)
 txtSubTotal = Entry(f2ab,font=('arial', 16, 'bold'), bd = 8, justify = "left", textvariable = SubTotal)
 txtSubTotal.grid(row = 1, column = 1, sticky = W)
