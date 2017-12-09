@@ -52,9 +52,9 @@ f2.configure (background = 'black')
 
 lblInfo = Label(Tops, font  = ('arial', 70, 'bold'), text = " \t Cafe Management System \t\t", bd = 100)
 lblInfo.grid(row = 0, column = 0)
+#Frame Creation ends
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HEADING ENDS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-#Frame Creation ends
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>COST OF ITEMS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def CostofItems():
